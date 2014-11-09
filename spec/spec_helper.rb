@@ -1,8 +1,9 @@
 require 'coveralls'
-Coveralls.wear!
+# Coveralls.wear!
 
 require 'simplecov'
-SimpleCov.start
+
+# multiple coverage formatters
 
 require 'capybara/rspec'
 
