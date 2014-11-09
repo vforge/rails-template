@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.1.0'
 
 # Use sqlite3 and MySQL as the database for Active Record
 gem 'sqlite3'
@@ -9,7 +9,7 @@ gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem "sass", '~> 3.2.5'
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.2'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
@@ -24,18 +24,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt', '~> 3.1.7'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.0'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', require: false
 
 # Deploy with Capistrano
 group :development do
@@ -80,10 +78,6 @@ gem 'validates_timeliness', '~> 3.0'
 # http://mailcatcher.me/
 gem 'mailcatcher'
 
-# https://github.com/ndbroadbent/turbo-sprockets-rails3
-# gem 'turbo-sprockets-rails3'/will_paginate
-gem 'will_paginate'
-
 # https://github.com/spilliton/randumb
 # Artist.random # a random Artist if there are any, otherwise nil
 # Artist.random(3)  # an array of three Artists picked at random
@@ -91,6 +85,11 @@ gem 'will_paginate'
 # # gimmie 5 random artists that are in the top 100 most viewed
 # artists = Artist.limit(100).order('view_count DESC').random_by_id_shuffle(5)
 gem 'randumb'
+
+# https://github.com/huacnlee/rails-settings-cached
+# Setting.XXXXXXX
+# gem 'rails-settings-cached', github: 'huacnlee/rails-settings-cached'
+
 
 # http://smartinez87.github.io/exception_notification/
 gem 'exception_notification'
@@ -101,7 +100,6 @@ gem 'slim'
 # https://github.com/ambethia/recaptcha/
 gem 'recaptcha'
 
-#
 gem 'basic-scopes'
 gem 'untraceable-save'
 
@@ -193,6 +191,18 @@ group :development, :test do
 
   # https://github.com/YorickPeterse/ruby-lint
   gem 'ruby-lint'
+
+  gem 'coveralls'#, require: false
+
+  gem 'rubocop'#, require: false
+  gem 'rubocop-rspec'
+
+  gem 'magic_encoding'
+end
+
+group :test do
+  # https://github.com/thekompanee/fuubar
+  gem 'fuubar'
 end
 
 # https://github.com/brainspec/enumerize
@@ -200,6 +210,9 @@ gem 'enumerize'
 
 # https://github.com/basecamp/marginalia
 gem 'marginalia'
+
+# https://github.com/drapergem/draper
+gem 'draper'
 
 # https://github.com/lulalala/multi_logger
 # To setup a logger, create an initializer script such as [Rails.root]/config/initializers/logger.rb with:
@@ -216,3 +229,6 @@ gem 'simple_form', '3.1.0rc2'
 # https://github.com/rails/sprockets-rails/issues/49
 # https://github.com/alexspeller/non-stupid-digest-assets
 gem 'non-stupid-digest-assets'
+
+# Fix for https://github.com/tzinfo/tzinfo/wiki/Resolving-TZInfo::DataSourceNotFound-Errors
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
