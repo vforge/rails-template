@@ -1,2 +1,2 @@
-Mercury::Application.routes.draw do
+RailsTemplate::Application.routes.draw do
 end
